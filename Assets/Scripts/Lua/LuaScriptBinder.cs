@@ -29,6 +29,7 @@ public static class LuaScriptBinder {
         UserData.RegisterType<NewMusicManager>();
         UserData.RegisterType<ProjectileController>();
         UserData.RegisterType<LuaArenaStatus>();
+        UserData.RegisterType<LuaMike>();
         UserData.RegisterType<LuaPlayerStatus>();
         UserData.RegisterType<LuaInputBinding>();
         UserData.RegisterType<LuaUnityTime>();
@@ -108,6 +109,8 @@ public static class LuaScriptBinder {
             script.Globals.Set("Player", PlayerStatus);
             DynValue ArenaStatus = UserData.Create(ArenaManager.luaStatus);
             script.Globals.Set("Arena", ArenaStatus);
+            DynValue MikeStatus = UserData.Create(MikeControls.luaStatus);
+            script.Globals.Set("Mike", MikeStatus);
             DynValue LuaUI = UserData.Create(new LuaPlayerUI());
             script.Globals.Set("UI", LuaUI);
         } else if (!GlobalControls.isInShop) {
@@ -251,6 +254,7 @@ public static class LuaScriptBinder {
         UserData.RegisterType<NewMusicManager>();
         UserData.RegisterType<ProjectileController>();
         UserData.RegisterType<LuaArenaStatus>();
+        UserData.RegisterType<LuaMike>();
         UserData.RegisterType<LuaPlayerStatus>();
         UserData.RegisterType<LuaInputBinding>();
         UserData.RegisterType<LuaUnityTime>();

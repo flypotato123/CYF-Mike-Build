@@ -14,10 +14,12 @@ enemypositions = {
 {0, 0}
 }
 
+
 -- A custom list with attacks to choose from. Actual selection happens in EnemyDialogueEnding(). Put here in case you want to use it.
-possible_attacks = {"bullettest_bouncy", "bullettest_chaserorb", "bullettest_touhou"}
+possible_attacks = {"miketest"}
 
 function EncounterStarting()
+    Audio.Stop()
     -- If you want to change the game state immediately, this is the place.
 end
 
@@ -27,6 +29,9 @@ end
 
 function EnemyDialogueEnding()
     -- Good location to fill the 'nextwaves' table with the attacks you want to have simultaneously.
+    -- arenasize = {25, 100}
+    arenasize = {250, 150}
+    wavetimer = 10000
     nextwaves = { possible_attacks[math.random(#possible_attacks)] }
 end
 
