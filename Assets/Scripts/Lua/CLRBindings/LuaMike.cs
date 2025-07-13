@@ -7,6 +7,8 @@ public class LuaMike {
     
     public float currentNote { get{return MikeControls.instance.output;}}
     
+    public bool isNote { get{return MikeControls.instance.isNote;}}
+    
     
     public float testingVal { get{return MikeControls.instance.testingVal;}}
     

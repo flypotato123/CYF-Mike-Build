@@ -22,6 +22,7 @@ public class MikeControls : MonoBehaviour {
     // current index of note played in the GetSpectrumData array
 
     public float output = 0;
+    public bool isNote = false;
     // currentIndex, converted to hertz
 
 
@@ -172,6 +173,11 @@ public class MikeControls : MonoBehaviour {
 
         // index in array -> to hertz calculation
         output = currentIndex * 24000 / ((int) (Mathf.Pow(2,resolution)));
+        isNote = true;
+        }
+        else
+        {
+            isNote = false;
         }
 
 
@@ -181,6 +187,7 @@ public class MikeControls : MonoBehaviour {
         }}
         else
         {
+            isNote = false;
             testingVal = 0;
         }
     }
